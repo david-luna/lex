@@ -1,0 +1,18 @@
+{
+  "locale": "es-ES",
+  "title": "test tale",
+  "pages": [
+    {
+      "text": "Érase una vez, un barquito chiquitito. El barquito quería navegar pero no podía.",
+      "image": "./assets/test/background.jpg"
+    },
+    {
+      "text": "Pero un día creció. el barco surcó los mares y, después de mucho tiempo, volvió a casa para explicar sus aventuras!",
+      "image": "./assets/test/dragon.jpeg"
+    },
+    {
+      "text": "¿Qué aventura quieres hacer tú?",
+      "image": "./assets/test/dragon.jpeg"
+    }
+  ]
+}
