@@ -1,15 +1,10 @@
-import { Tale, Writer } from "./types";
 
-export class Auca {
+export class Speecher {
   private resultHandler: any;
   private errorHandler: any;
-  private tale!: Tale;
-  private pageIndex = 0;
-  private wordIndex = 0;
-
+  
 
   constructor(
-    private writer: Writer,
     private speech: SpeechRecognition,
   ) {
     this.resultHandler = (evt: SpeechRecognitionEvent) => this.handleResult(evt);
@@ -19,13 +14,13 @@ export class Auca {
     this.speech.continuous = true;
   }
 
-  async init(url: string): Promise<void> {
-    this.tale = await fetch(url).then(r => r.json()) as Tale;
-    this.tale.pages.forEach(p => p.words = this.extractWords(p.text));
-    this.writer.write(this.tale);
-    this.speech.lang = this.tale.locale;
-    this.speech.start();
-  }
+  // async init(url: string): Promise<void> {
+  //   this.tale = await fetch(url).then(r => r.json()) as Tale;
+  //   this.tale.pages.forEach(p => p.words = this.extractWords(p.text));
+  //   this.writer.write(this.tale);
+  //   this.speech.lang = this.tale.locale;
+  //   this.speech.start();
+  // }
 
   private handleResult(event: SpeechRecognitionEvent) {
     const lastResult = event.results.item(event.results.length - 1);

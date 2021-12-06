@@ -1,0 +1,10 @@
+{
+  "type": "fake",
+  "locale": "es-ES",
+  "pairs": [
+    ["pera", "lera", 0],
+    ["ármoles", "árboles", 1],
+    ["sandía", "pandía", 0],
+    ["fafeteria", "cafetería", 1]
+  ]
+}

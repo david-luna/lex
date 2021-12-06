@@ -1,30 +1,35 @@
 {
-  "name": "auca",
+  "name": "lex",
   "version": "0.0.1",
   "description": "learn to read with help of voice recognition",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --config ./webpack.config.js"
+    "start": "webpack serve --config ./webpack.config.js",
+    "build": "tsc -p tsconfig.json && node ./tools/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/david-luna/auca.git"
+    "url": "git+https://github.com/david-luna/lex.git"
   },
   "keywords": [
     "reading",
     "kids",
+    "games",
+    "dyslexia",
     "voice-recognition"
   ],
   "author": "David Luna",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/david-luna/auca/issues"
+    "url": "https://github.com/david-luna/lex/issues"
   },
-  "homepage": "https://github.com/david-luna/auca#readme",
+  "homepage": "https://github.com/david-luna/lex#readme",
   "devDependencies": {
+    "@types/node": "^16.11.11",
     "@types/reveal": "^4.1.1",
     "ts-loader": "^9.2.5",
+    "ts-node": "^10.4.0",
     "typescript": "^3.8.3",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0",
