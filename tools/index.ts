@@ -9,8 +9,8 @@ import { HackSyllablesWriter } from './writer-hack-syllables';
 // TODO: maybe it will be usefull
 const [_bin, _file, ...params] = process.argv;
 
-const templatePath = `${__dirname}/../template`;
-const buildPath = `${__dirname}/../build`;
+const srcPath = `${__dirname}/../src`;
+const distPath = `${__dirname}/../dist`;
 const gamePath = `${__dirname}/../games`;
 const gamePaths = readdirSync(gamePath).map((name) => `${gamePath}/${name}`);
 const writers = {
@@ -22,7 +22,7 @@ const writers = {
 }
 
 const marker = '<!-- content -->';
-const page = readFileSync(`${templatePath}/index.html`, { encoding: 'utf-8' });
+const page = readFileSync(`${srcPath}/index.html`, { encoding: 'utf-8' });
 const html = gamePaths.reduce((sections, path) => {
   const data = JSON.parse(readFileSync(path, { encoding: 'utf-8' })) as Game;
   const writer = writers[data.type];
@@ -34,5 +34,5 @@ const html = gamePaths.reduce((sections, path) => {
   return sections + section;
 }, '');
 
-mkdirSync(buildPath, { recursive: true });
-writeFileSync(`${buildPath}/index.html`, `${page.replace(marker, html)}`);
+mkdirSync(distPath, { recursive: true });
+writeFileSync(`${distPath}/index.html`, `${page.replace(marker, html)}`);

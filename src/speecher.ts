@@ -12,15 +12,9 @@ export class Speecher {
     this.speech.addEventListener('result', this.resultHandler);
     this.speech.addEventListener('error' , this.errorHandler);
     this.speech.continuous = true;
+    this.speech.lang = 'en-US';
+    this.speech.start();
   }
-
-  // async init(url: string): Promise<void> {
-  //   this.tale = await fetch(url).then(r => r.json()) as Tale;
-  //   this.tale.pages.forEach(p => p.words = this.extractWords(p.text));
-  //   this.writer.write(this.tale);
-  //   this.speech.lang = this.tale.locale;
-  //   this.speech.start();
-  // }
 
   private handleResult(event: SpeechRecognitionEvent) {
     const lastResult = event.results.item(event.results.length - 1);

@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --config ./webpack.config.js",
-    "clean-tools": "cd tools && rm *.js *.js.map *.d.ts",
-    "build-html": "cd tools && tsc -p tsconfig.json && node ./index.js",
-    "build": "npm run build-html"
+    "start": "npm run build && http-serve ./build",
+    "build-html": "ts-node --project tsconfig.json ./tools/index.ts",
+    "build-js": "webpack --config ./webpack.config.js",
+    "build": "npm run build-html && npm run build-js"
   },
   "repository": {
     "type": "git",
@@ -36,8 +36,5 @@
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.1"
-  },
-  "dependencies": {
-    "reveal.js": "^4.1.3"
   }
 }
