@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config ./webpack.config.js",
-    "build": "tsc -p tsconfig.json && node ./tools/index.js"
+    "clean-tools": "cd tools && rm *.js *.js.map *.d.ts",
+    "build-html": "cd tools && tsc -p tsconfig.json && node ./index.js",
+    "build": "npm run build-html"
   },
   "repository": {
     "type": "git",

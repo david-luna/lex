@@ -6,4 +6,6 @@ node_modules
 
 # build
 dist
-tools
+tools/*.js
+tools/*.js.map
+tools/*.d.ts
