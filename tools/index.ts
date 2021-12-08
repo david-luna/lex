@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync, mkdirSync, writeFileSync } from 'fs';
 import { GameType, Game } from './types';
-import { WordsWriter } from './writer-word';
+import { WordsWriter } from './writer-words';
 import { TaleWriter } from './writer-tale';
 import { FakeWriter } from './writer-fake';
 import { HackWordsWriter } from './writer-hack-words';
@@ -26,10 +26,12 @@ const page = readFileSync(`${srcPath}/index.html`, { encoding: 'utf-8' });
 const html = gamePaths.reduce((sections, path) => {
   const data = JSON.parse(readFileSync(path, { encoding: 'utf-8' })) as Game;
   const writer = writers[data.type];
+  const { type, locale } = data;
+  const meta = `data-type="${type}" data-locale="${locale}"`;
   let section = `<!-- No writer found for type ${data.type} -->`;
 
   if (writer) {
-    section = `<section>${writer.write(data as any)}</section>`
+    section = `<section ${meta}>${writer.write(data as any)}</section>`
   }
   return sections + section;
 }, '');

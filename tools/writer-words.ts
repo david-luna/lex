@@ -3,7 +3,7 @@ import { Writer } from './writer';
 
 const html = `
 <section>
-  <p>{0}</p>
+  <p data-word>{0}</p>
 </section>
 `;
 
