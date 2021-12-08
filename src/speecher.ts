@@ -29,7 +29,10 @@ export class Speecher {
     for (let i = 0; i < lastResult.length; i++) {
       const alternative = lastResult.item(i);
 
-      alternative.transcript.split(' ').forEach((word) => {
+      alternative.transcript.split(' ')
+      .filter((word) => !!word)
+      .forEach((word) => {
+        console.log('heard', word);
         this.$events.dispatchEvent(new CustomEvent('transcript', { detail: word }));
       });
     }

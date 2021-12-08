@@ -37,6 +37,8 @@ const processSlideEvent = (event: RevealEvent) => {
     speecher = new Speecher(new webkitSpeechRecognition(), { locale });
   }
 
+  if (solver) solver.disconnect();
+
   switch(type) {
     case 'words':
       solver = new WordsSolver(speecher.$events, nextSlide, slide);
@@ -45,7 +47,6 @@ const processSlideEvent = (event: RevealEvent) => {
       solver = new TaleSolver(speecher.$events, nextSlide, slide);
       break;
   }
-  console.log('game slide', type, locale);
 };
 
 
