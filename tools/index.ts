@@ -10,7 +10,7 @@ import { HackSyllablesWriter } from './writer-hack-syllables';
 const [_bin, _file, ...params] = process.argv;
 
 const srcPath = `${__dirname}/../src`;
-const distPath = `${__dirname}/../dist`;
+const distPath = `${__dirname}/../docs`;
 const gamePath = `${__dirname}/../games`;
 const gamePaths = readdirSync(gamePath).map((name) => `${gamePath}/${name}`);
 const writers = {
