@@ -49,8 +49,6 @@ const processSlideEvent = (event: RevealEvent) => {
   }
 };
 
-
-
 // Wire up with reveal API
 Reveal.addEventListener('slidechanged', processSlideEvent);
 Reveal.addEventListener('ready', processSlideEvent);
