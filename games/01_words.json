@@ -1,6 +1,10 @@
 {
   "type": "words",
   "locale": "es-ES",
+  "description": [
+    "En esto juego debrás leer las palabras que aparece a continuación.",
+    "No corras, pronuncia bien para que mi oído digital pueda enterarse."
+  ],
   "words": [
     "manzana",
     "periquito",

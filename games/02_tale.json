@@ -1,7 +1,9 @@
 {
   "type": "tale",
   "locale": "es-ES",
-  "title": "test tale",
+  "description": [
+    "Lee la história que viene a continuación ya a cambio te mostraré unas bonitas imágenes."
+  ],
   "pages": [
     {
       "text": "Érase una vez, un barquito chiquitito. El barquito quería navegar pero no podía.",

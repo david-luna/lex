@@ -1,6 +1,10 @@
 {
   "type": "fake",
   "locale": "es-ES",
+  "description": [
+    "En los siguientes pares de pablabras hay una que existe y la otra no.",
+    "Lee en voz álta la palabra correcta."
+  ],
   "pairs": [
     ["pera", "lera", 0],
     ["ármoles", "árboles", 1],
