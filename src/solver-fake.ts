@@ -20,7 +20,8 @@ export class FakeSolver extends Solver {
   }
 
   private getWord(slide: HTMLElement, correct: boolean): string {
-    const paragraph = slide.querySelector(`p[data-correct="${correct}"]`) as HTMLParagraphElement;
+    const selector = `p[data-correct="${correct}"]`;
+    const paragraph = slide.querySelector(selector) as HTMLParagraphElement;
 
     return paragraph?.innerText || '';
   }

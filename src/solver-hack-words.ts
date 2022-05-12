@@ -14,7 +14,6 @@ export class HackWordsSolver extends Solver {
   processTranscript(word: string): void {
     const nextWord = this.words[0];
 
-    console.log('comparing', word, nextWord);
     if (word.toLowerCase() === nextWord.toLowerCase()) {
       this.words.shift();
       this.successCallback();
