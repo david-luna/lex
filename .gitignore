@@ -1,6 +1,9 @@
 # System
 .DS_Store
 
+# Local config
+.npmrc
+
 # Dependencies
 node_modules
 

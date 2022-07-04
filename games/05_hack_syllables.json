@@ -1,6 +1,9 @@
 {
   "type": "hack-syllables",
   "locale": "es-ES",
+  "description": [
+    "Separa las siguiente palabras en sílabas."
+  ],
   "words": [
     "bo de ga",
     "pa pel",

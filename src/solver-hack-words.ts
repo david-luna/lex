@@ -1,17 +1,14 @@
 import { Solver } from './solver';
 
-export class TaleSolver extends Solver {
+export class HackWordsSolver extends Solver {
   words: string[];
-  image: string;
-
   constructor(
     $transcripts: EventTarget,
     successCallback: () => void,
     slide: HTMLElement,
   ) {
     super($transcripts, successCallback);
-    this.image = slide.getAttribute('data-image-url') || '';
-    this.words = Array.from(slide.querySelectorAll('span')).map(elem => elem.innerText);
+    this.words = Array.from(slide.querySelectorAll('p')).map(elem => elem.innerHTML);
   }
 
   processTranscript(word: string): void {

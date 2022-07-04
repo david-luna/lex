@@ -14,32 +14,35 @@ export enum Locale {
 export interface GameWords {
   type: GameType.Words;
   locale: Locale;
+  description: string | string[];
   words: string[];
 }
 export interface GameTale {
   type: GameType.Tale;
   locale: Locale;
+  description: string | string[];
   pages: { text: string; image: string }[];
 }
 
 export interface GameFake {
   type: GameType.Fake;
   locale: Locale;
+  description: string | string[];
   pairs: [string, string, number][];
 }
 
 export interface GameHackWords {
   type: GameType.HackWords;
   locale: Locale;
+  description: string | string[];
   sentences: string[];
 }
 
 export interface GameHackSyllables {
   type: GameType.HackSyllables;
   locale: Locale;
+  description: string | string[];
   words: string[];
 }
 
-
 export type Game = GameWords | GameTale | GameFake | GameHackWords | GameHackSyllables;
-

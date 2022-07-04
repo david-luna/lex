@@ -26,11 +26,11 @@ const page = readFileSync(`${srcPath}/index.html`, { encoding: 'utf-8' });
 const html = gamePaths.reduce((sections, path) => {
   const data = JSON.parse(readFileSync(path, { encoding: 'utf-8' })) as Game;
   const writer = writers[data.type];
-  const { type, locale } = data;
+  const { type, locale, description } = data;
   const meta = `data-type="${type}" data-locale="${locale}"`;
   let section = `<!-- No writer found for type ${data.type} -->`;
 
-  if (writer) {
+  if (writer && data.type !== GameType.HackSyllables) {
     section = `<section ${meta}>${writer.write(data as any)}</section>`
   }
   return sections + section;

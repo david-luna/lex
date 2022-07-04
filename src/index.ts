@@ -1,8 +1,10 @@
 /// <reference path="../node_modules/@types/reveal/index.d.ts" />
 import { Speecher, SpeechLocale } from './speecher';
-import { WordsSolver } from './solver-words';
 import { Solver } from './solver';
+import { FakeSolver } from './solver-fake';
+import { HackWordsSolver } from './solver-hack-words';
 import { TaleSolver } from './solver-tale';
+import { WordsSolver } from './solver-words';
 
 interface RevealEvent {
   currentSlide: HTMLElement;
@@ -45,6 +47,12 @@ const processSlideEvent = (event: RevealEvent) => {
       break;
     case 'tale':
       solver = new TaleSolver(speecher.$events, nextSlide, slide);
+      break;
+    case 'fake':
+      solver = new FakeSolver(speecher.$events, nextSlide, slide);
+      break;
+    case 'hack-words':
+      solver = new HackWordsSolver(speecher.$events, nextSlide, slide);
       break;
   }
 };

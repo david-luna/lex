@@ -1,6 +1,10 @@
 {
   "type": "hack-words",
   "locale": "es-ES",
+  "description": [
+    "Las pablabras se han pegado unas a otras y necesitamos tu ayuda para separarlas.",
+    "Di en voz alta las palabras de una en una."
+  ],
   "sentences": [
     "el coche de mi padre es grande",
     "la casa del campo es bonita",
