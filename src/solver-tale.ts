@@ -10,8 +10,12 @@ export class TaleSolver extends Solver {
     slide: HTMLElement,
   ) {
     super($transcripts, successCallback);
-    this.image = slide.getAttribute('data-image-url') || '';
+    this.image = slide.getAttribute('data-background-image') || '';
     this.words = Array.from(slide.querySelectorAll('span')).map(elem => elem.innerText);
+
+    if (this.image !== '') {
+      setTimeout(successCallback, 5000);
+    }
   }
 
   processTranscript(word: string): void {

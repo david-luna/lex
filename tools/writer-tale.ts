@@ -3,8 +3,10 @@ import { Writer } from './writer';
 
 const spanTemplate = `<span class="fragment highlight-red">{0}</span>`;
 const template = `
-<section data-image-url="{1}">
+<section>
   <p>{0}</p>
+</section>
+<section data-background-image="{1}">
 </section>
 `;
 
