@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && http-serve ./docs",
+    "serve": "http-serve ./docs",
     "build-html": "ts-node --project tsconfig.json ./tools/index.ts",
     "build-js": "webpack --config ./webpack.config.js",
     "build": "npm run build-html && npm run build-js"
